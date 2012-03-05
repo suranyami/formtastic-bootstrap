@@ -15,8 +15,12 @@ module FormtasticBootstrap
 
         if block_given?
           template.content_tag(:div, html_options) do
-            yield
-          end          
+            contents = if template.respond_to?(:is_haml?) && template.is_haml?
+              template.capture_haml(&block)
+            else
+              template.capture(&block)
+            end
+          end         
         else
           args = [:commit] if args.empty?
           contents = args.map { |button_name| send(:"#{button_name}_button") }
