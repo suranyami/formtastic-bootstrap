@@ -3,6 +3,7 @@ module FormtasticBootstrap
     module ButtonsHelper
 
       include Formtastic::Helpers::ButtonsHelper
+      include Formtastic::Helpers::HamlHelper
 
       def buttons(*args, &block)
 
@@ -15,11 +16,7 @@ module FormtasticBootstrap
 
         if block_given?
           template.content_tag(:div, html_options) do
-            contents = if template.respond_to?(:is_haml?) && template.is_haml?
-              template.capture_haml(&block)
-            else
-              template.capture(&block)
-            end
+            contents = capture_block(&block)
           end         
         else
           args = [:commit] if args.empty?

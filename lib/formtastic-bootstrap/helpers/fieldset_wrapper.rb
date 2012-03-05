@@ -15,11 +15,7 @@ module FormtasticBootstrap
         legend  = template.content_tag(:legend, Formtastic::Util.html_safe(legend)) unless legend.blank?
 
         if block_given?
-          contents = if template.respond_to?(:is_haml?) && template.is_haml?
-            template.capture_haml(&block)
-          else
-            template.capture(&block)
-          end
+          contents = capture_block(&block)
         end
 
         # Ruby 1.9: String#to_s behavior changed, need to make an explicit join.
