@@ -3,6 +3,7 @@ module FormtasticBootstrap
     module FieldsetWrapper
 
       include Formtastic::Helpers::FieldsetWrapper
+      include FormtasticBootstrap::Helpers::HamlHelper
       
       protected
 

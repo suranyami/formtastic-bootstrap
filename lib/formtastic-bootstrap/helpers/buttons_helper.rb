@@ -3,7 +3,7 @@ module FormtasticBootstrap
     module ButtonsHelper
 
       include Formtastic::Helpers::ButtonsHelper
-      include Formtastic::Helpers::HamlHelper
+      include FormtasticBootstrap::Helpers::HamlHelper
 
       def buttons(*args, &block)
 
