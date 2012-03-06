@@ -45,7 +45,7 @@ describe 'hidden input' do
   end
 
   it "should pass any option specified using :input_html" do
-    output_buffer.should have_tag("form div.clearfix div.input input#new_post_reviewer[@type=\"hidden\"][@class=\"new_post_reviewer\"]")
+    output_buffer.should have_tag("form div.clearfix div.input input#new_post_reviewer[@type=\"hidden\"][@class=\"new_post_reviewer controls\"]")
   end
 
   it "should prefer :input_html over directly supplied options" do

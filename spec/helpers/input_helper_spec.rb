@@ -828,7 +828,7 @@ describe 'FormtasticBootstrap::FormBuilder#input' do
       
         it 'should append given classes to li default classes' do
           concat(semantic_form_for(@new_post) do |builder|
-            concat(builder.input(:title, :wrapper_html => {:class => :another_class}, :required => true))
+            concat(builder.input(:title, :wrapper_html => {:class => [:another_class]}, :required => true))
           end)
           output_buffer.should have_tag("form div.clearfix.string")
           output_buffer.should have_tag("form div.clearfix.required")
