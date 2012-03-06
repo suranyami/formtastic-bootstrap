@@ -11,5 +11,4 @@ group :development, :test do
   gem "rcov", ">= 0"
   gem "rspec_tag_matchers"
   gem "guard-rspec"
-  gem "guard-spork"
 end
