@@ -133,12 +133,12 @@ describe 'Formtastic::FormBuilder#buttons' do
       end
   
       it 'should render a form with a div containing a input for each button arg' do
-        output_buffer.should have_tag('form > div.actions > input', :count => 1)
-        output_buffer.should have_tag('form > div.actions > input.commit', :count => 1)
+        output_buffer.should have_tag('form > div.form-actions > input', :count => 1)
+        output_buffer.should have_tag('form > div.form-actions > input.commit', :count => 1)
       end
   
       it 'should pass the options down to the div' do
-        output_buffer.should have_tag('form > div#my-id.actions')
+        output_buffer.should have_tag('form > div#my-id.form-actions')
       end
   
     end
