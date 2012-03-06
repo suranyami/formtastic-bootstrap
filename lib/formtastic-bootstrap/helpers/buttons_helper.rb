@@ -4,7 +4,6 @@ module FormtasticBootstrap
       include Formtastic::Helpers::ButtonsHelper
 
       def buttons(*args, &block)
-
         html_options = args.extract_options!
         html_options[:class] ||= "form-actions"
   

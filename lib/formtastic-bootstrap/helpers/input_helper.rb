@@ -7,6 +7,13 @@ module FormtasticBootstrap
         "FormtasticBootstrap::Inputs::#{as.to_s.camelize}Input"
       end
       
+      def input(method, options = {})
+        options[:wrapper_html] ||= {}
+        options[:wrapper_html][:class] ||= []
+        options[:wrapper_html][:class] << 'control-group'
+        options[:inner_html][:class] << 'controls'
+      end
     end
+      
   end
 end
